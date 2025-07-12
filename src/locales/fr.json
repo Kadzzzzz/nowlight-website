@@ -1,0 +1,159 @@
+{
+  "nav": {
+    "ambition": "Ambition",
+    "conception": "Conception",
+    "engagements": "Engagements",
+    "contact": "Nous Contacter"
+  },
+  "hero": {
+    "subtitle": "PROJET D'ÉTUDE",
+    "title": "NOWLIGHT",
+    "ecoModeOff": "Mode Éco",
+    "ecoModeOn": "Mode Standard",
+    "scrollDown": "Défiler vers le bas"
+  },
+  "ambition": {
+    "title": "L'AMBITION DE NOTRE PROJET",
+    "paragraph1": "L'objectif est de développer une alternative durable aux lampes à kérosène.",
+    "paragraph2": "Initialement, l'idée était de convertir l'énergie potentielle gravitationnelle en lumière, mais cette méthode ne produisait qu'une intensité limitée sur une courte durée.",
+    "paragraph3": "La solution proposée exploite désormais l'effort humain pour générer instantanément de la lumière et de l'électricité, en améliorant le concept de la NowLight afin d'optimiser la production et le stockage d'énergie pour l'éclairage et la recharge d'appareils électroniques."
+  },
+  "conception": {
+    "title": "NOTRE TRAVAIL DE CONCEPTION",
+    "description": "Sélectionnez un module ci-contre pour en apprendre plus sur chaque aspect de notre projet : dessins techniques, schémas électriques, informations techniques, matériaux...",
+    "prototypeInitialTitle": "Prototype initial",
+    "prototypeFinalTitle": "Prototype final",
+    "prototypeOptimiseTitle": "Prototype optimisé",
+    "openDetails": "Ouvrir les détails pour {moduleName}"
+  },
+  "engagements": {
+    "title": "NOS ENGAGEMENTS",
+    "item1": {
+      "title": "UNE TECHNOLOGIE ACCESSIBLE",
+      "description": "Notre initiative propose un accès économique à l'énergie. Grâce à sa simplicité, notre produit permet à l'utilisateur de réparer sa NowLight, quel que soit son niveau de compétence en mécanique.",
+      "iconClass": "fas fa-users"
+    },
+    "item2": {
+      "title": "UNE CONCEPTION RESPONSABLE",
+      "description": "L'utilisation de matériaux écoresponsables ancre notre projet dans une démarche respectueuse de l'environnement.",
+      "iconClass": "fas fa-leaf"
+    },
+    "item3": {
+      "title": "UN PROJET EN OPEN SOURCE",
+      "description": "Notre projet repose sur une analyse collaborative et accessible à tous, visant à dynamiser l'innovation des technologies qui composent la NowLight.",
+      "iconClass": "fas fa-code-branch"
+    }
+  },
+  "contact": {
+    "title": "NOUS CONTACTER",
+    "email": "E-MAIL",
+    "phone": "NUMÉRO DE TÉLÉPHONE",
+    "address": "LOCAUX",
+    "formTitle": "Envoyez-nous un message",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom complet",
+      "email": "Email",
+      "emailPlaceholder": "votre.email@exemple.com",
+      "message": "Message",
+      "messagePlaceholder": "Écrivez votre message ici...",
+      "submit": "Envoyer",
+      "success": "Message envoyé avec succès !",
+      "error": "Erreur lors de l'envoi du message. Veuillez réessayer."
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "social": {
+      "facebook": "fab fa-facebook-f",
+      "twitter": "fab fa-twitter",
+      "instagram": "fab fa-instagram",
+      "linkedin": "fab fa-linkedin-in"
+    }
+  },
+  "languageSelection": {
+    "title": "NOWLIGHT",
+    "select": "Choisissez votre langue / Choose your language",
+    "fr": "Français",
+    "en": "English"
+  },
+  "modules": {
+    "initialVideo": {
+      "title": "Tutoriel",
+      "type": "video",
+      "videoId": "q6Ffbkk2g0k"
+    },
+    "initialElectric": {
+      "title": "Électronique",
+      "description": "Ce module aborde la partie électrique du prototype monté dans le module mécanique.\n\n## Composants\n• Moteur (RS 413 0622)\n• 2 fils électriques\n• Une lampe LED\n\n## Procédure de montage\n• **Étape 1** : Monter la pièce de jonction à l'extrémité du moteur\n• **Étape 2** : Positionner le moteur sur le troisième bloc de bois de façon à obtenir une coaxialité des axes du moteur et du moyeu\n• **Étape 3** : Visser le moteur au bloc de bois\n• **Étape 4** : Souder les fils électriques au moteur [Img:1, Txt:\"Figure 1\"]\n• **Étape 5** : Faire passer les fils par dessous jusqu'à l'avant de la planche\n• **Étape 6** : Fixer la LED sur le bloc de bois à l'avant de la planche à l'aide d'un pistolet à colle [Img:2, Txt:\"Figure 2\"]",
+      "images": [
+        "module-initialElectric-1.jpg",
+        "module-initialElectric-2.jpg"
+      ]
+    },
+    "finalElectric": { 
+      "title": "Électronique", 
+      "description": "Nous avons récupéré la partie électronique d’une lampe dynamo rechargeable. Cette lampe à dynamo comprend un moteur triphasé (MSAP). En entrée de la carte électronique nous trouvons un pont redresseur triphasé. Par souci de simplicité, on accorde le moteur à courant continu directement à l’entrée du redresseur triphasé, sur deux des trois phases. On peut aussi réutiliser le circuit électronique avec le moteur adapté à nos besoins.",
+      "images": [
+        "module-finalElectric-1.png",
+        "module-finalElectric-2.png",
+        "module-finalElectric-3.png"
+      ]
+    },
+    "initialMecanic": { 
+      "title": "Mécanique", 
+      "description": "Le prototype que vous vous apprêtez à réaliser permet de générer de la lumière instantanément grâce à une chaîne de vélo que vous tirez. Le rendu final de ce prototype est visible sur les [Img:1, Txt:\"Figures 1\"] et [Img:2, Txt:\"2\"]. Dans ce module, seule la partie mécanique est abordée. Certains composants sont à récupérer dans des rebuts ou directement chez vous. Les valeurs données dans ces différentes étapes peuvent varier pour s'adapter aux composants récupérés. L'impression 3D et l'usinage seront utilisés dans certaines étapes. Les modèles 3D à imprimer sont disponibles sur ce lien : ***https://www.printables.com/@MartinJM_3099912***\n\n## Liste des composants :\n\n• un moyeu de vélo\n• une chaîne de vélo\n• 2 roulements de 8 mm de diamètre intérieur\n• un axe en acier à usiner\n• 3 blocs de bois à découper\n• une planche de bois Médium de 5 mm d'épaisseur\n• 2 cordes\n• vis\n\n## Suivez les étapes suivantes :\n\n•Découpez la planche de bois (voir [Img:3, Txt:\"Figure 3\"]) qui sert de base au bâti, en suivant les indications de la [Img:4, Txt:\"Figure 4\"].\n\n•Percer la planche de 4 trous, comme illustré sur les [Img:5, Txt:\"Figures 5\"] et [Img:6, Txt:\"6\"].\n•Positionner sur la planche de bois 3 blocs de bois, dont les dimensions sont à adapter aux composants récupérés (voir [Img:7, Txt:\"Figure 7\"]) :\n•**Bloc 1 :** sur la zone avant de la planche, c'est-à-dire avant les encoches.\n•**Bloc 2 :** à une distance légèrement plus grande que la longueur du moyeu (dans notre cas, à une distance de 12 cm du premier bloc de bois).\n•**Bloc 3 :** à une distance légèrement plus grande que la longueur de l'axe qui dépasse du deuxième bloc de bois (dans notre cas, à une distance de 8 cm du deuxième bloc).\n•Usiner l'axe dont le schéma technique est [Img:8, Txt:\"Figure 8\"].\n•Faire passer une vis ou une goupille dans le trou dédié dans l'axe et le moyeu pour les encastrer ([Img:9, Txt:\"Figure 9\"]).\n•Faire passer chaque extrémité de l'axe dans un des deux roulements ([Img:10, Txt:\"Figure 10\"]).\n•Imprimer en PLA 2 bagues en U.\n•Mettre chaque roulement sous une bague en U.\n•Visser les bagues en U sur les deux premiers blocs de bois avec les roulements.\n•Usiner la pièce de jonction en aluminium grâce au dessin de définition de la [Img:11, Txt:\"Figure 11\"]).\n•Monter la pièce de jonction à l'extrémité de l'axe, entre le deuxième et le troisième bloc de bois ([Img:12, Txt:\"Figure 12\"]).\n•Couper deux bouts de corde permettant l'équilibre de la lampe lorsqu'elle est accrochée à un mur *(les longueurs des cordes dépendent du poids du moyeu utilisé)*.\n•Passer les extrémités de la corde la plus longue par les deux trous à l'avant de la planche.\n•Passer les extrémités de la deuxième corde par les deux trous à l'arrière de la planche.\n•Mettre la chaîne sur la roue dentée.",
+      "images": [
+        "module-initialMecanic-1.jpg",
+        "module-initialMecanic-2.jpg",
+        "module-initialMecanic-3.jpg",
+        "module-initialMecanic-4.png",
+        "module-initialMecanic-5.jpg",
+        "module-initialMecanic-6.jpg",
+        "module-initialMecanic-7.jpg",
+        "module-initialMecanic-8.png",
+        "module-initialMecanic-9.jpg",
+        "module-initialMecanic-10.jpg",
+        "module-initialMecanic-11.png"
+      ]
+    },
+    "generationSystem": {
+      "title": "Vidéo", 
+      "type": "video", 
+      "videoId": "324oWFZiGEo?si=33dSC8NUh9NiHUst" 
+    },
+    "finalMecanic": { 
+      "title": "Mécanique", 
+      "description": "***...***",
+      "images": [
+        "module-finalMecanic-1.jpg",
+        "module-finalMecanic-2.jpg"
+      ]
+    },
+    "optimizedElectric": { 
+      "title": "Électronique", 
+      "description": "***...***",
+      "images": [
+        "module-optimizedElectric-1.jpg",
+        "module-optimizedElectric-2.jpg"
+      ]
+    },
+    "performanceTests": { 
+      "title": "Vidéo", 
+      "type": "video", 
+      "videoId": "ID_A_REMPLIR" 
+    },
+    "manufacturing": { 
+      "title": "Tutoriel",
+      "type": "video",
+      "videoId": "q6Ffbkk2g0k"
+    },
+    "optimizedMecanic": { 
+      "title": "Mécanique", 
+      "description": "Le prototype que vous vous apprêtez à réaliser permet de générer de la lumière instantanément grâce à un système de train épicycloïdal entièrement imprimé en 3D. Le rendu final de ce prototype offre une solution compacte et moderne par rapport au système traditionnel à chaîne de vélo. Dans ce module, seule la partie mécanique est abordée. L'impression 3D constitue le procédé principal de fabrication, permettant une reproductibilité et une précision optimales.\n\n## Liste des composants :\n• un boîtier imprimé en 3D\n• une structure imprimée en 3D\n• un axe imprimé en 3D\n• une poulie imprimée en 3D\n• des satellites imprimés en 3D pour le train épicycloïdal\n• un moteur brushless triphasé\n• 4 roulements à billes 608ZZ\n• une courroie de profil 5M, largeur 10mm, longueur 360mm\n• vis de fixation\n\n## Étapes de réalisation :\n• **Impression des composants 3D :** Imprimez en PLA l'ensemble des pièces mécaniques selon les fichiers fournis : boîtier, structure, axe, poulie et satellites du train épicycloïdal. *Les modèles 3D sont disponibles grâce au lien suivant : https://www.printables.com/model/1334081-rechargeable-hand-lamp*\n• **Assemblage du train épicycloïdal :** Montez les satellites sur la structure à l'aide de 3 roulements à billes.\n\n• **Installation des roulements :** Insérez les 2 roulements à billes 608ZZ dans leurs logements respectifs :\n• **1 roulement** dans la structure\n   • **1 roulement** dans la poulie\n• **Fixation du moteur brushless :** Vissez directement le moteur brushless triphasé sur la structure imprimée, en utilisant les points de fixation prévus à cet effet.\n• **Montage de la courroie :** Installez la courroie de profil 5M (largeur 10mm, longueur 360mm) sur le système poulie-moteur en veillant à une tension appropriée.\n• **Assemblage final :** Intégrez tous les composants dans le boîtier imprimé, en s'assurant du bon alignement et de la libre rotation du mécanisme.",
+      "images": [
+        "module-optimizedMecanic-1.png"
+      ]
+    }
+  }
+}

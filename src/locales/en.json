@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "ambition": "Ambition",
+    "conception": "Design",
+    "engagements": "Commitments",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "subtitle": "STUDY PROJECT",
+    "title": "NOWLIGHT",
+    "ecoModeOff": "Eco Mode",
+    "ecoModeOn": "Standard Mode",
+    "scrollDown": "Scroll down"
+  },
+  "ambition": {
+    "title": "OUR PROJECT AMBITION",
+    "paragraph1": "The goal is to develop a sustainable alternative to kerosene lamps.",
+    "paragraph2": "Initially, the idea was to convert gravitational potential energy into light, but this method only produced limited intensity for a short duration.",
+    "paragraph3": "The proposed solution now uses human effort to instantly generate light and electricity, improving the NowLight concept to optimize energy production and storage for lighting and charging electronic devices."
+  },
+  "conception": {
+    "title": "OUR DESIGN WORK",
+    "description": "Select a module below to learn more about each aspect of our project: technical drawings, electrical diagrams, technical information, materials...",
+    "prototypeInitialTitle": "Initial Prototype",
+    "prototypeFinalTitle": "Final Prototype",
+    "prototypeOptimiseTitle": "Optimized Prototype",
+    "openDetails": "Open details for {moduleName}"
+  },
+  "engagements": {
+    "title": "OUR COMMITMENTS",
+    "item1": {
+      "title": "ACCESSIBLE TECHNOLOGY",
+      "description": "Our initiative offers affordable access to energy. Thanks to its simplicity, our product allows users to repair their NowLight, regardless of their mechanical skill level.",
+      "iconClass": "fas fa-users"
+    },
+    "item2": {
+      "title": "RESPONSIBLE DESIGN",
+      "description": "The use of eco-friendly materials anchors our project in an environmentally respectful approach.",
+      "iconClass": "fas fa-leaf"
+    },
+    "item3": {
+      "title": "OPEN SOURCE PROJECT",
+      "description": "Our project is based on collaborative analysis accessible to all, aiming to boost innovation in the technologies that make up the NowLight.",
+      "iconClass": "fas fa-code-branch"
+    }
+  },
+  "contact": {
+    "title": "CONTACT US",
+    "email": "EMAIL",
+    "phone": "PHONE NUMBER",
+    "address": "LOCATION",
+    "formTitle": "Send us a message",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Write your message here...",
+      "submit": "Send",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "social": {
+      "facebook": "fab fa-facebook-f",
+      "twitter": "fab fa-twitter",
+      "instagram": "fab fa-instagram",
+      "linkedin": "fab fa-linkedin-in"
+    }
+  },
+  "languageSelection": {
+    "title": "NOWLIGHT",
+    "select": "Choisissez votre langue / Choose your language",
+    "fr": "Français",
+    "en": "English"
+  },
+  "modules": {
+    "initialVideo": {
+      "title": "Tutorial",
+      "type": "video",
+      "videoId": "q6Ffbkk2g0k"
+    },
+    "initialElectric": { 
+      "title": "Electronic", 
+      "description": "This module addresses the electrical part of the prototype assembled in the mechanical module.\n\n## Components\n• Motor (RS 413 0622)\n• 2 electrical wires\n• A LED lamp\n\n## Assembly procedure\n• **Step 1**: Mount the junction piece at the end of the motor\n• **Step 2**: Position the motor on the third wooden block so as to obtain coaxiality of the motor and hub axes\n• **Step 3**: Screw the motor to the wooden block\n• **Step 4**: Solder the electrical wires to the motor [Img:1, Txt:\"Figure 1\"]\n• **Step 5**: Pass the wires underneath to the front of the board\n• **Step 6**: Fix the LED on the wooden block at the front of the board using a glue gun [Img:2, Txt:\"Figure 2\"]",
+      "images": [
+        "module-initialElectric-1.jpg",
+        "module-initialElectric-2.jpg"
+      ]
+    },
+    "finalElectric": { 
+      "title": "Electronic", 
+      "description": "We salvaged the electronics from a rechargeable dynamo lamp. This dynamo lamp includes a three-phase motor (MSAP). At the input of the electronic board, we find a three-phase rectifier bridge. For simplicity, we connect the DC motor directly to the input of the three-phase rectifier, on two of the three phases. We can also reuse the electronic circuit with the motor adapted to our needs.",
+      "images": [
+        "module-finalElectric-1.png",
+        "module-finalElectric-2.png",
+        "module-finalElectric-3.png"
+      ]
+    },
+    "initialMecanic": { 
+      "title": "Mecanic", 
+      "description": "The prototype you are about to create allows you to generate light instantly thanks to a bicycle chain that you pull. The final rendering of this prototype is visible on the [Img:1, Txt:\"Figures 1\"] and [Img:2, Txt:\"2\"]. In this module, only the mechanical part is addressed. Some components are to be retrieved from scraps or directly from your home. The values given in these different steps may vary to adapt to the retrieved components. 3D printing and machining will be used in certain steps. All the 3D models are available on the following link : ***https://www.printables.com/@MartinJM_3099912***\n\n## Component list:\n\n• a bicycle hub\n• a bicycle chain\n• 2 bearings with 8 mm inner diameter\n• a steel axle to be machined\n• 3 wooden blocks to be cut\n• a 5 mm thick Medium wood board\n• 2 ropes\n• screws\n\n## Follow the following steps:\n\n•Cut the wooden board (see [Img:3, Txt:\"Figure 3\"]) which serves as the base for the frame, following the indications of [Img:4, Txt:\"Figure 4\"].\n\n•Drill 4 holes in the board, as illustrated on [Img:5, Txt:\"Figures 5\"] and [Img:6, Txt:\"6\"].\n•Position on the wooden board 3 wooden blocks, whose dimensions are to be adapted to the retrieved components (see [Img:7, Txt:\"Figure 7\"]):\n•**Block 1:** on the front area of the board, that is to say before the notches.\n•**Block 2:** at a distance slightly greater than the length of the hub (in our case, at a distance of 12 cm from the first wooden block).\n•**Block 3:** at a distance slightly greater than the length of the axle that protrudes from the second wooden block (in our case, at a distance of 8 cm from the second block).\n•Machine the axle whose technical diagram is [Img:8, Txt:\"Figure 8\"].\n•Pass a screw or a pin through the dedicated hole in the axle and the hub to embed them ([Img:9, Txt:\"Figure 9\"]).\n•Pass each end of the axle through one of the two bearings ([Img:10, Txt:\"Figure 10\"]).\n•Print in PLA 2 U-shaped rings.\n•Put each bearing under a U-shaped ring.\n•Screw the U-shaped rings on the first two wooden blocks with the bearings.\n•Machine the aluminum junction piece using the definition drawing seen on (see [Img:11, Txt:\"Figure 11\"]).\n•Mount the junction piece at the end of the axle, between the second and third wooden blocks ([Img:12, Txt:\"Figure 12\"]).\n•Cut two pieces of rope allowing the balance of the lamp when it is hung on a wall *(the lengths of the ropes depend on the weight of the hub used)*.\n•Pass the ends of the longer rope through the two holes at the front of the board.\n•Pass the ends of the second rope through the two holes at the back of the board.\n•Put the chain on the toothed wheel.",
+      "images": [
+        "module-initialMecanic-1.jpg",
+        "module-initialMecanic-2.jpg",
+        "module-initialMecanic-3.jpg",
+        "module-initialMecanic-4.png",
+        "module-initialMecanic-5.jpg",
+        "module-initialMecanic-6.jpg",
+        "module-initialMecanic-7.jpg",
+        "module-initialMecanic-8.png",
+        "module-initialMecanic-9.jpg",
+        "module-initialMecanic-10.jpg",
+        "module-initialMecanic-11.png"
+      ]
+    },
+    "generationSystem": { 
+      "title": "Video", 
+      "type": "video", 
+      "videoId": "324oWFZiGEo?si=33dSC8NUh9NiHUst" 
+    },
+    "finalMecanic": { 
+      "title": "Mecanic", 
+      "description": "***...***",
+      "images": [
+        "module-finalMecanic-1.jpg",
+        "module-finalMecanic-2.jpg"
+      ]
+    },
+    "optimizedElectric": { 
+      "title": "Electronic", 
+      "description": "***...***" 
+    },
+    "performanceTests": { 
+      "title": "Performance Tests", 
+      "type": "video", 
+      "videoId": "ID_A_REMPLIR" 
+    },
+    "manufacturing": { 
+      "title": "Tutorial",
+      "type": "video",
+      "videoId": "q6Ffbkk2g0k"
+    },
+    "optimizedMecanic": { 
+      "title": "Mecanic", 
+      "description": "The prototype that you are about to realize allows to generate light instantly thanks to an epicyclic gear train system entirely 3D printed. The final rendering of this prototype offers a compact and modern solution compared to the traditional bicycle chain system. In this module, only the mechanical part is addressed. 3D printing constitutes the main manufacturing process, allowing optimal reproducibility and precision.\n\n## Components list:\n• a 3D printed housing\n• a 3D printed structure\n• a 3D printed shaft\n• a 3D printed pulley\n• 3D printed satellites for the epicyclic gear train\n• a three-phase brushless motor\n• 4 ball bearings 608ZZ\n• a 5M profile belt, width 10mm, length 360mm\n• fixing screws\n\n## Realization steps:\n• **3D components printing:** Print in PLA the set of mechanical parts according to the provided files: housing, structure, shaft, pulley and satellites of the epicyclic gear train. *The 3D models are available thanks to the following link: https://www.printables.com/model/1334081-rechargeable-hand-lamp*\n• **Epicyclic gear train assembly:** Mount the satellites on the structure using 3 ball bearings.\n• **Bearings installation:** Insert the 2 ball bearings 608ZZ in their respective housings:***1 bearing*** in the structure and ***1 bearing*** in the pulley\n• **Brushless motor fixing:** Screw directly the three-phase brushless motor on the printed structure, using the fixing points provided for this purpose.\n• **Belt mounting:** Install the 5M profile belt (width 10mm, length 360mm) on the pulley-motor system while ensuring appropriate tension.\n• **Final assembly:** Integrate all components in the printed housing, ensuring proper alignment and free rotation of the mechanism.",
+      "images": [
+        "module-optimizedMecanic-1.png"
+      ]
+    }
+  }
+}
