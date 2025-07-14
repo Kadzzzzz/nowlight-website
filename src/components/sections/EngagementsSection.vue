@@ -4,7 +4,7 @@
       <div class="max-w-6xl mx-auto">
         <!-- Section Header -->
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
             {{ t.engagements.title }}
           </h2>
           <div class="w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>

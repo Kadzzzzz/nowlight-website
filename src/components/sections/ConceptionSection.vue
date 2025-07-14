@@ -21,6 +21,7 @@
               :module="getModule('initialVideo')"
               :eco-mode="ecoMode"
               :is-video="true"
+              @click="openModule('initialVideo')"
             />
 
             <!-- Module Mécanique Initial -->
@@ -48,6 +49,7 @@
               :module="getModule('generationSystem')"
               :eco-mode="ecoMode"
               :is-video="true"
+              @click="openModule('generationSystem')"
             />
           </div>
         </div>
@@ -67,7 +69,7 @@
       </div>
     </div>
 
-    <!-- Module Modal -->
+    <!-- Module Modal - UNE SEULE MODALE -->
     <ModuleModal
       v-if="selectedModule"
       :module="selectedModule"
@@ -90,7 +92,8 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['open-module'])
+// SUPPRESSION de l'emit qui causait le problème
+// const emit = defineEmits(['open-module'])
 
 const languageStore = useLanguageStore()
 const t = computed(() => languageStore.t)
@@ -107,7 +110,10 @@ const getModule = (moduleKey) => {
 const openModule = (moduleKey) => {
   const module = getModule(moduleKey)
   selectedModule.value = module
-  emit('open-module', module)
+
+  // SUPPRESSION de l'emit qui causait la double modale
+  // emit('open-module', module)
+
   document.body.style.overflow = 'hidden'
 }
 

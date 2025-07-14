@@ -7,8 +7,10 @@
           <h2>{{ t.contact.title }}</h2>
           <div class="contact-items">
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
+              <div class="contact-icon email-icon">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
               </div>
               <div class="contact-info">
                 <h3>{{ t.contact.email }}</h3>
@@ -17,8 +19,10 @@
             </div>
 
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
+              <div class="contact-icon phone-icon">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
               </div>
               <div class="contact-info">
                 <h3>{{ t.contact.phone }}</h3>
@@ -27,8 +31,10 @@
             </div>
 
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
+              <div class="contact-icon location-icon">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
               </div>
               <div class="contact-info">
                 <h3>{{ t.contact.address }}</h3>
@@ -174,7 +180,6 @@ const t = computed(() => languageStore.t)
 .contact-icon {
   width: 50px;
   height: 50px;
-  background-color: var(--accent-color, #FF8C00);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -183,14 +188,42 @@ const t = computed(() => languageStore.t)
   transition: transform var(--transition-speed, 0.3s), box-shadow var(--transition-speed, 0.3s);
 }
 
+/* Icônes spécifiques avec couleurs adaptées */
+.email-icon {
+  background-color: #3b82f6; /* Bleu pour email */
+}
+
+.phone-icon {
+  background-color: #10b981; /* Vert pour téléphone */
+}
+
+.location-icon {
+  background-color: #ef4444; /* Rouge pour localisation */
+}
+
 .contact-icon i {
   color: white;
   font-size: 1.2rem;
 }
 
+.contact-icon svg {
+  color: white;
+}
+
 .contact-item:hover .contact-icon {
   transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(255, 140, 0, 0.3);
+}
+
+.contact-item:hover .email-icon {
+  box-shadow: 0 8px 15px rgba(59, 130, 246, 0.3);
+}
+
+.contact-item:hover .phone-icon {
+  box-shadow: 0 8px 15px rgba(16, 185, 129, 0.3);
+}
+
+.contact-item:hover .location-icon {
+  box-shadow: 0 8px 15px rgba(239, 68, 68, 0.3);
 }
 
 .contact-info h3 {

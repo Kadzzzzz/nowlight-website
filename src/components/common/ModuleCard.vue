@@ -1,12 +1,12 @@
 <template>
   <div
     class="module-item"
-    :class="{ 'clickable': !isVideo, 'video-module': isVideo }"
+    :class="{ 'clickable': true, 'video-module': isVideo }"
     @click="handleClick"
     @keydown.enter="handleClick"
-    :tabindex="isVideo ? -1 : 0"
-    :role="isVideo ? null : 'button'"
-    :aria-label="isVideo ? null : `Ouvrir les détails de ${module.title}`"
+    :tabindex="0"
+    role="button"
+    :aria-label="isVideo ? `Ouvrir la vidéo ${module.title}` : `Ouvrir les détails de ${module.title}`"
   >
     <!-- Video Module -->
     <div v-if="isVideo && !ecoMode" class="video-container">
@@ -19,11 +19,11 @@
       ></iframe>
     </div>
 
-    <!-- Eco Video Placeholder -->
+    <!-- Eco Video Placeholder - MAINTENANT CLIQUABLE -->
     <div v-else-if="ecoMode && isVideo" class="module-image eco-placeholder-video">
       <div class="eco-placeholder-content">
-        <i class="fas fa-video-slash"></i>
-        <span>Video Disabled</span>
+        <i class="fas fa-video"></i>
+        <span>Cliquez pour voir la vidéo</span>
       </div>
     </div>
 
@@ -35,6 +35,7 @@
         :alt="module.title"
         class="module-preview-image"
       />
+      <!-- En mode éco, toujours afficher le placeholder même si ce n'est pas une vidéo -->
       <span v-else class="eco-placeholder-module-index">+</span>
     </div>
 
@@ -64,9 +65,8 @@ const props = defineProps({
 const emit = defineEmits(['click'])
 
 const handleClick = () => {
-  if (!props.isVideo) {
-    emit('click')
-  }
+  // Maintenant toujours émettre le clic, même pour les vidéos
+  emit('click')
 }
 
 const getVideoId = (videoId) => {
@@ -162,10 +162,11 @@ const getFirstModuleImage = () => {
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Eco Video Placeholder */
+/* Eco Video Placeholder - AMÉLIORÉ */
 .eco-placeholder-video {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   height: 180px;
+  cursor: pointer;
 }
 
 .eco-placeholder-content {
@@ -178,6 +179,11 @@ const getFirstModuleImage = () => {
 
 .eco-placeholder-content i {
   font-size: 2.5rem;
+}
+
+.eco-placeholder-content span {
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 /* Module Title */
