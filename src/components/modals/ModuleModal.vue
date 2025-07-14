@@ -47,24 +47,29 @@
 
         <!-- Module Content -->
         <div v-else class="p-6">
-          <!-- Images Gallery - ÉTAPE 1: Gestion mode éco -->
+          <!-- Images Gallery - Design amélioré -->
           <div v-if="module.images && module.images.length > 0" class="mb-8">
-            <!-- Mode normal : afficher les images -->
-            <div v-if="!ecoMode" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Mode normal : afficher les images avec numérotation -->
+            <div v-if="!ecoMode" class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div
                 v-for="(image, index) in module.images"
                 :key="index"
-                class="relative group cursor-pointer"
+                class="relative group cursor-pointer bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
                 @click="openImageViewer(index)"
               >
                 <img
                   :src="`/src/assets/images/${image}`"
                   :alt="`${module.title} - Image ${index + 1}`"
-                  class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                  class="w-full h-48 object-cover"
                   @error="handleImageError"
                 >
-                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg flex items-center justify-center">
-                  <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <!-- Numérotation de l'image en bas à droite -->
+                <div class="absolute bottom-3 right-3 bg-black/70 text-white text-sm font-medium px-2 py-1 rounded shadow-lg">
+                  {{ index + 1 }}
+                </div>
+                <!-- Overlay au hover -->
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                  <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                   </svg>
                 </div>
@@ -85,8 +90,8 @@
             </div>
           </div>
 
-          <!-- Description -->
-          <div v-if="module.description" class="prose prose-lg max-w-none">
+          <!-- Description avec design amélioré -->
+          <div v-if="module.description" class="prose-custom max-w-none">
             <div v-html="formatDescription(module.description)" @click="handleDescriptionClick"></div>
           </div>
 
@@ -104,7 +109,7 @@
     </div>
 
     <!-- Image Viewer - TAILLE CORRIGÉE ET FERMETURE AMÉLIORÉE -->
-    <div v-if="selectedImageIndex !== null" class="absolute inset-0 bg-black/90 flex items-center justify-center z-10" @click="closeImageViewer">
+    <div v-if="selectedImageIndex !== null" class="absolute inset-0 bg-black/90 flex items-center justify-center z-10" @click.stop="closeImageViewer">
       <div class="relative w-full h-full p-8 flex items-center justify-center">
         <img
           :src="`/src/assets/images/${module.images[selectedImageIndex]}`"
@@ -191,8 +196,8 @@ const formatDescription = (description) => {
       .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-gray-900">$1</strong>')
       // Convertir l'italique
       .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
-      // Convertir les listes
-      .replace(/^• (.*$)/gim, '<li class="ml-4 mb-2">$1</li>')
+      // Convertir les listes - SANS points
+      .replace(/^• (.*$)/gim, '<div class="list-item-no-bullet">$1</div>')
       // Convertir les références d'images CLIQUABLES
       .replace(/\[Img:(\d+), Txt:"([^"]+)"\]/g, '<span class="image-reference" data-image-index="$1" style="color: #f97316; font-weight: 600; cursor: pointer; text-decoration: underline;">($2)</span>')
       // Convertir les liens
@@ -269,6 +274,126 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+/* Styles personnalisés pour le contenu des modules */
+.prose-custom {
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* Titres avec traits de séparation orange */
+.prose-custom :deep(h2) {
+  color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #f97316;
+  position: relative;
+}
+
+.prose-custom :deep(h2::after) {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #f97316, #fb923c);
+}
+
+.prose-custom :deep(h3) {
+  color: #f97316;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem 0;
+}
+
+/* Paragraphes */
+.prose-custom :deep(p) {
+  margin-bottom: 1.25rem;
+  text-align: justify;
+}
+
+/* Style pour les éléments de liste personnalisés */
+.prose-custom :deep(.list-item) {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.prose-custom :deep(.list-item::before) {
+  content: '•';
+  color: #f97316;
+  font-weight: normal;
+  position: absolute;
+  left: 0;
+  font-size: 0.9em;
+  top: 0.1em;
+}
+
+/* Listes standards (au cas où) */
+.prose-custom :deep(ul) {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding-left: 0;
+}
+
+.prose-custom :deep(li) {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.prose-custom :deep(li::before) {
+  content: '•';
+  color: #f97316;
+  font-weight: normal;
+  position: absolute;
+  left: 0;
+  font-size: 0.9em;
+  top: 0.1em;
+}
+
+/* Texte en gras */
+.prose-custom :deep(strong) {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Références d'images stylisées */
+.prose-custom :deep(.image-reference) {
+  color: #f97316 !important;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  background: linear-gradient(135deg, #fef3e2, #fed7aa);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #fdba74;
+  transition: all 0.2s ease;
+}
+
+.prose-custom :deep(.image-reference:hover) {
+  background: linear-gradient(135deg, #fed7aa, #fdba74);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+}
+
+/* Liens externes */
+.prose-custom :deep(a[target="_blank"]) {
+  color: #2563eb;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.prose-custom :deep(a[target="_blank"]:hover) {
+  color: #1d4ed8;
+}
+
+/* Anciens styles pour compatibilité */
 .prose {
   max-width: none;
 }
@@ -288,15 +413,6 @@ onUnmounted(() => {
 }
 
 .prose li {
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.prose li::before {
-  content: '•';
-  color: #f97316;
-  font-weight: bold;
-  position: absolute;
-  left: 0;
+  padding-left: 0;
 }
 </style>
