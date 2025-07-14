@@ -87,7 +87,7 @@
 
           <!-- Description -->
           <div v-if="module.description" class="prose prose-lg max-w-none">
-            <div v-html="formatDescription(module.description)"></div>
+            <div v-html="formatDescription(module.description)" @click="handleDescriptionClick"></div>
           </div>
 
           <!-- Placeholder si pas de contenu -->
@@ -103,13 +103,13 @@
       </div>
     </div>
 
-    <!-- Image Viewer -->
+    <!-- Image Viewer - TAILLE CORRIGÉE ET FERMETURE AMÉLIORÉE -->
     <div v-if="selectedImageIndex !== null" class="absolute inset-0 bg-black/90 flex items-center justify-center z-10" @click="closeImageViewer">
-      <div class="relative max-w-5xl max-h-full p-4">
+      <div class="relative w-full h-full p-8 flex items-center justify-center">
         <img
           :src="`/src/assets/images/${module.images[selectedImageIndex]}`"
           :alt="`${module.title} - Image ${selectedImageIndex + 1}`"
-          class="max-w-full max-h-full object-contain"
+          class="max-w-[90%] max-h-[90%] object-contain"
           @click.stop
         >
 
@@ -138,7 +138,7 @@
 
         <!-- Close button -->
         <button
-          @click="closeImageViewer"
+          @click.stop="closeImageViewer"
           class="absolute top-4 right-4 w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-200"
         >
           <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -193,8 +193,8 @@ const formatDescription = (description) => {
       .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
       // Convertir les listes
       .replace(/^• (.*$)/gim, '<li class="ml-4 mb-2">$1</li>')
-      // Convertir les références d'images [Img:X, Txt:"Y"]
-      .replace(/\[Img:(\d+), Txt:"([^"]+)"\]/g, '<span class="text-orange-600 font-medium">($2)</span>')
+      // Convertir les références d'images CLIQUABLES
+      .replace(/\[Img:(\d+), Txt:"([^"]+)"\]/g, '<span class="image-reference" data-image-index="$1" style="color: #f97316; font-weight: 600; cursor: pointer; text-decoration: underline;">($2)</span>')
       // Convertir les liens
       .replace(/\*\*\*(.*?)\*\*\*/g, '<a href="$1" target="_blank" class="text-blue-600 hover:text-blue-800 underline">$1</a>')
       // Convertir les retours à la ligne
@@ -234,18 +234,28 @@ const handleImageError = (event) => {
   event.target.style.display = 'none'
 }
 
-// Gestion des touches clavier
+// NOUVELLE FONCTION pour gérer les clics sur les références d'images
+const handleDescriptionClick = (event) => {
+  if (event.target.classList.contains('image-reference')) {
+    const imageIndex = parseInt(event.target.getAttribute('data-image-index')) - 1 // -1 car les indices commencent à 1 dans le texte
+    if (imageIndex >= 0 && imageIndex < props.module.images.length) {
+      openImageViewer(imageIndex)
+    }
+  }
+}
+
+// Gestion des touches clavier - CORRIGÉE
 const handleKeydown = (event) => {
   if (selectedImageIndex.value !== null) {
     if (event.key === 'Escape') {
-      closeImageViewer()
+      closeImageViewer() // Ferme seulement le viewer d'image
     } else if (event.key === 'ArrowLeft') {
       previousImage()
     } else if (event.key === 'ArrowRight') {
       nextImage()
     }
   } else if (event.key === 'Escape') {
-    closeModal()
+    closeModal() // Ferme la modale seulement si pas dans le viewer
   }
 }
 
