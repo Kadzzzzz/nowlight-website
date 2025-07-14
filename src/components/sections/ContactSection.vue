@@ -14,21 +14,10 @@
               </div>
               <div class="contact-info">
                 <h3>{{ t.contact.email }}</h3>
-                <p><a href="mailto:projectnowlight@gmail.com">projectnowlight@gmail.com</a></p>
+                <p><a href="mailto:jeremy.luccioni@etu.ec-lyon.fr">jeremy.luccioni@etu.ec-lyon.fr</a></p>
               </div>
             </div>
-
-            <div class="contact-item">
-              <div class="contact-icon phone-icon">
-                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                </svg>
-              </div>
-              <div class="contact-info">
-                <h3>{{ t.contact.phone }}</h3>
-                <p><a href="tel:0783796492">07 83 79 64 92</a></p>
-              </div>
-            </div>
+            
 
             <div class="contact-item">
               <div class="contact-icon location-icon">
@@ -38,7 +27,7 @@
               </div>
               <div class="contact-info">
                 <h3>{{ t.contact.address }}</h3>
-                <p>36 Av. Guy de Collongue, 69130 Écully</p>
+                <p>Centrale Lyon, 36 Av. Guy de Collongue, 69130 Écully</p>
               </div>
             </div>
           </div>
@@ -57,7 +46,7 @@
             <div class="flex flex-col items-center justify-center text-center p-8">
               <div class="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center mb-4">
                 <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z"></path>
                 </svg>
               </div>
               <p class="text-gray-600 font-medium">{{ t.contact.title }}</p>
